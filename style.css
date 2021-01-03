@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Hind&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Hind", sans-serif;
+}
+
+:root {
+  --color-light: #ffd8d8;
+  --color-dark: #ff7575;
+  --color-text: #e16868;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-light);
+}
+
+.searchBar {
+  width: 400px;
+  height: 110px;
+  padding: 20px 25px;
+  background: var(--color-dark);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px #ff7c7c, 0 0 0 15px #ffffffeb;
+}
+
+.searchBar__text {
+  width: 80%;
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 40px;
+  color: #fff;
+}
+
+.searchBar__text::placeholder {
+  color: var(--color-text);
+}
+
+.searchBar__btn {
+  width: 20%;
+  position: relative;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.searchBar__circle {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 75%;
+  height: 75%;
+  border: 10px solid #fff;
+  border-radius: 50px;
+  transition: all 0.5s;
+}
+
+.searchBar__btn:hover .searchBar__circle {
+  top: 50%;
+  left: 50%;
+  border-radius: 50px;
+  border: 5px solid #fff;
+  background: #fff;
+  height: 0;
+  transform: translate(-50%, -50%);
+}
+
+.searchBar__bar {
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  width: 10px;
+  height: 40%;
+  background: transparent;
+  border-radius: 0px 0px 10px 10px;
+
+}
+
+.searchBar__bar::before,
+.searchBar__bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 10px 10px 10px 10px;
+  transform-origin: bottom center;
+  transition: all 0.5s;
+  transform: translate(0%, 0%) rotate(-45deg);
+}
+
+.searchBar__btn:hover .searchBar__bar::after {
+  transform: translate(-250%, -40%) rotate(45deg);
+}
+
+.searchBar__btn:hover .searchBar__bar::before {
+
+  transform: translate(-50%, -90%) rotate(-45deg);
+}
